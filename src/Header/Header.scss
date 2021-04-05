@@ -1,0 +1,164 @@
+@import "../Variables.scss";
+
+header {
+    padding:20px 0 0;
+    .container {
+    .logo {
+        float:left;
+        img {
+            width:100%;
+        }
+    }
+    .burguer {
+        display:none;
+        
+    }
+    nav {
+        float:right;
+        ul {
+            float: right;
+            li {
+                float:left;
+                list-style-type: none;
+                margin: 0 20px;
+                letter-spacing: 2px;
+                font-size: 14px;
+                &:first-child {
+                    margin-left:0;
+                }
+                &:last-child {
+                    margin-right:0;
+                }
+                a {
+                    color: #000000;
+                    display: inline-block;
+                    padding: 10px;
+                    font-weight: 600;
+
+                    span {
+                        text-decoration: line-through;
+                    }
+                }
+                ul {
+                    padding-left: 0px;
+                    display:none;
+                    position:absolute;
+                    z-index: 1;
+                    margin: 0;
+                    li {
+                        text-transform:none;
+                        font-size:12px;
+                        a {
+                            padding:5px;
+                        }
+                       
+                    }
+                }
+                &:hover {
+                  a {
+                      color:#e81c2a;
+                      text-decoration: none;
+                      border-radius:5px 5px 0 0;
+                      transition: width .5s ease-in-out;
+                  }
+                    ul {
+                        display:block;
+                        li {
+                            padding:3px;
+                            a {
+                                color:#000000;
+                            }
+                            &:hover {
+                                background-color:#e81c2a;    
+                                transition: 0.5s;
+                                border-radius:3px;
+                                a {
+                                    color:$white;
+                                }
+                            }
+                        }
+
+                    }
+                }
+                &.hover {
+                    display:none;
+                }
+            }
+        }
+    }
+}
+}
+
+@media only screen and (max-width: 992px) {
+    header {
+        .container {
+            .logo {
+                a {
+                    width: 200px;
+                    display: inline-block;
+                }
+            }
+            .burguer {
+                display: block;
+                float: right;
+                margin: 10px 0 0;
+                a {
+                display:inline-block;
+                float: right;
+                i {
+                    color:$white;
+                    font-size: 26px;
+                    &.fa-times {
+                        display:none;
+                    }
+                }
+                &:hover {
+                    i {
+                        color:$red;
+                    }
+                }
+                &.open {
+                    .fa-bars {
+                        display:none;
+                    }
+                    .fa-times {
+                        display:block;
+                        margin: 0px 5px;
+                    }
+                }
+            }
+            ul{
+                display:none;
+                position: absolute;
+                padding: 0;
+                background-color: #000000;
+                padding: 5px 10px 0;
+                margin-left: -50px;
+                margin-top: 30px;
+                border-radius: 5px;
+                z-index: 1;
+                li {
+                    list-style-type: none;
+                    text-align: right;
+                    text-transform: uppercase;
+                    margin-bottom: 0px;
+                    display: inline-block;
+                    a {
+                        color:$white;
+                        text-decoration:none;
+                        &:hover {
+                            color:$red;
+                        }
+                    }
+                }
+            }
+            }
+            nav {
+                display:none;
+                &.desplegado {
+                    display:block;
+                }
+            }
+        }
+    }
+}
